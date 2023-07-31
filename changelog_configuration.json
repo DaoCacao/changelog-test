@@ -17,7 +17,7 @@
     "order": "ASC",
     "on_property": "mergedAt"
   },
-  "template": "${{CHANGELOG}}\n\nAdditional:\n${{UNCATEGORIZED}}",
+  "template": "${{CHANGELOG}}\n${{UNCATEGORIZED}}",
   "pr_template": "- ${{TITLE}} by ${{AUTHOR}}",
   "empty_template": "- no changes",
   "label_extractor": [
