@@ -17,9 +17,26 @@
     "order": "ASC",
     "on_property": "mergedAt"
   },
-  "template": "${{CHANGELOG}}\n\n${{UNCATEGORIZED}}",
-  "pr_template": "- ${{TITLE}} by ${{AUTHOR}} [PR](${{URL}})",
+  "template": "${{CHANGELOG}}\n\nAdditional:\n${{UNCATEGORIZED}}",
+  "pr_template": "- ${{TITLE}} by ${{AUTHOR}}",
   "empty_template": "- no changes",
+  "label_extractor": [
+    {
+      "pattern": "Feature:",
+      "on_property": "title",
+      "target": "feature"
+    },
+    {
+      "pattern": "Fix:",
+      "on_property": "title",
+      "target": "fix"
+    },
+    {
+      "pattern": "Tech:",
+      "on_property": "title",
+      "target": "tech"
+    }
+  ],
   "trim_values": false,
   "max_tags_to_fetch": 200,
   "max_pull_requests": 200,
