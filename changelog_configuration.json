@@ -22,17 +22,17 @@
   "empty_template": "- no changes",
   "label_extractor": [
     {
-      "pattern": "Feature:",
+      "pattern": "Feature: (.+)",
       "on_property": "title",
       "target": "feature"
     },
     {
-      "pattern": "Fix:",
+      "pattern": "Fix: (.+)",
       "on_property": "title",
       "target": "fix"
     },
     {
-      "pattern": "Tech:",
+      "pattern": "Tech: (.+)",
       "on_property": "title",
       "target": "tech"
     }
