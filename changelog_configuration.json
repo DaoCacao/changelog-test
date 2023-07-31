@@ -1,15 +1,15 @@
 {
   "categories": [
     {
-      "title": "## 🚀 Features",
+      "title": "Features",
       "labels": ["feature"]
     },
     {
-      "title": "## 🐛 Fixes",
+      "title": "Fixes",
       "labels": ["fix"]
     },
     {
-      "title": "## ⚒️ Tech",
+      "title": "Tech",
       "labels": ["tech"]
     }
   ],
