@@ -5,13 +5,13 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: true
-
-env:
-  APK_PATH: app/build/outputs/apk/debug/app-debug.apk
 
 jobs:
   build:
@@ -27,7 +27,6 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v4
         with:
           configuration: "changelog_configuration.json"
-          outputFile: "release_notes.txt"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
