@@ -26,4 +26,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Show release notes
-        run: echo ${{ steps.release-notes.outputs.changelog }}
+        run: echo "${{ steps.release-notes.outputs.changelog }}"
