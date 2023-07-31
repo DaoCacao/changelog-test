@@ -3,16 +3,10 @@ name: Build release candidate
 on:
   workflow_dispatch:
   pull_request:
-    branches:
-      - main
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.sha }}
+  group: "releace candidate"
   cancel-in-progress: true
-
-permissions:
-  id-token: write
-  contents: read
 
 jobs:
   build:
@@ -28,8 +22,9 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v4
         with:
           configuration: "changelog_configuration.json"
+          toTag: HEAD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Show release notes
-        run: echo ${{ steps.release-notes.outputs.changelog }}
+        run: echo "${{ steps.release-notes.outputs.changelog }}"
